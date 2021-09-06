@@ -19,12 +19,12 @@ int main()
 	const int MAX_LANGUAGES = 15;
 	const string LANGUAGE_NAMES_FILE = "languages.txt";
 	const string INFO_FILE = "info.txt";
-   
+	
 	string names[MAX_LANGUAGES];
 	int infoArray[MAX_LANGUAGES][INFO];
    
 	int numLanguages = loadLanguages( LANGUAGE_NAMES_FILE, names, MAX_LANGUAGES );
-   
+	
 	if( numLanguages > 0 )
 	{
 		bool infoLoaded = loadInfo( INFO_FILE, infoArray, numLanguages );

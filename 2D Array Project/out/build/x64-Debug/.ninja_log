@@ -1,0 +1,12 @@
+# ninja log v5
+1	475	6526639850975781	CMakeFiles/Module01-Lab-01a.dir/main.cpp.obj	71a679801eb537c5
+4	526	6526639851505478	CMakeFiles/Module01-Lab-01a.dir/functions.cpp.obj	bab540b26db00433
+526	853	6526639854665377	Module01-Lab-01a.exe	6731d8aa965bba04
+0	825	6526651284959225	CMakeFiles/Module01-Lab-01a.dir/main.cpp.obj	71a679801eb537c5
+825	981	6526651286319221	Module01-Lab-01a.exe	6731d8aa965bba04
+0	497	6526652436900044	CMakeFiles/Module01-Lab-01a.dir/main.cpp.obj	71a679801eb537c5
+5	535	6526652437280027	CMakeFiles/Module01-Lab-01a.dir/functions.cpp.obj	bab540b26db00433
+536	744	6526652439055058	Module01-Lab-01a.exe	6731d8aa965bba04
+1	684	6526653205590765	CMakeFiles/Module01-Lab-01a.dir/main.cpp.obj	71a679801eb537c5
+5	701	6526653205850760	CMakeFiles/Module01-Lab-01a.dir/functions.cpp.obj	bab540b26db00433
+702	860	6526653207180763	Module01-Lab-01a.exe	6731d8aa965bba04

@@ -11,6 +11,7 @@
 #include <sstream>
 #include <iomanip>
 #include "functions.h"
+#include <iostream>
 
 using namespace std;
 
@@ -21,7 +22,8 @@ int loadLanguages( const string& filename, string names[], int maxLanguages )
    
 	ifstream input(filename);
 	if( input.is_open() )
-	{
+	{	
+		cout << input.is_open();
 		while( !input.eof() && numNames < maxLanguages )
 		{
 			getline( input, names[numNames] );
@@ -55,9 +57,7 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 				infoArray[CurrentRow][0] = TempOne;
 				infoArray[CurrentRow][1] = TempTwo;
 		}
-			
 	}
-	
 	return true;
 }
 
