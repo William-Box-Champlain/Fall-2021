@@ -38,8 +38,9 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 	// Helper Variables
 	int Rows = numLanguages;
 	int Columns = INFO;
-	int TempOne = 0;
-	int TempTwo = 0;
+	string TempString;
+	int TempOne;
+	int TempTwo;
 	// just a stub
 	// modify to load the 2D array (infoArray) with the data stored in info.txt
 	ifstream input(filename); // create ifstream object and load file
@@ -47,12 +48,12 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 	{
 		//Loop to traverse rows
 		for(int CurrentRow = 0; CurrentRow < Rows; CurrentRow++)
-		{
-			//loop to traverse columns and input values into 2d array
-			for(int CurrentColumn = 0; CurrentColumn < Columns; CurrentColumn++)
-			{
-				infoArray[CurrentRow][CurrentColumn]
-			}
+		{		//Store line in TempString, then break line up and cast into ints
+				getline(input,TempString);
+				TempOne = stoi(TempString.substr(0,TempString.find(" ")));
+				TempTwo = stoi(TempString.substr(TempString.find(" "),TempString.length()));
+				infoArray[CurrentRow][0] = TempOne;
+				infoArray[CurrentRow][1] = TempTwo;
 		}
 			
 	}
@@ -66,6 +67,7 @@ string formatReportLine( int languageRank, int infoArray[][INFO], string names[]
 	// just a stub
    	// modify to build each output line for each language, and align the output so its organized
    	// hint: to return a string that concatenates strings and ints, use a stringstream
-   
-   return " ";
+	stringstream ss;
+	ss << infoArray[languageRank][0] << infoArray[languageRank][1];
+   	return names[languageRank] + ss.str();
 }
