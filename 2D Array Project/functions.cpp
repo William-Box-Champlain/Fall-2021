@@ -11,7 +11,6 @@
 #include <sstream>
 #include <iomanip>
 #include "functions.h"
-#include <iostream>
 
 using namespace std;
 
@@ -22,8 +21,7 @@ int loadLanguages( const string& filename, string names[], int maxLanguages )
    
 	ifstream input(filename);
 	if( input.is_open() )
-	{	
-		cout << input.is_open();
+	{
 		while( !input.eof() && numNames < maxLanguages )
 		{
 			getline( input, names[numNames] );
