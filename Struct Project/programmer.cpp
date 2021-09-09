@@ -14,16 +14,24 @@
 int readProgrammers( ifstream& inputFile, Programmer programmers[], int maxProgrammers )
 {	
 	//helper variables
-	int TempOne = 0;
-	int TempTwo = 0;
+	int i = 0;
+	int TempId = 0;
+	int TempLines = 0;
 	string TempName = "";
 	string TempString = "";
 	//read from ifstream into programmer struct
-	for(int i = 0; i < maxProgrammers; i++)
+	for(i = 0; i < maxProgrammers; i++)
 	{
 		getline(inputFile, TempString);
+		TempId = stoi(TempString.substr(0, TempString.find(" ")));
+		TempString.erase(0, (TempString.find(" ") + 1));
+		TempName = TempString.substr(0, TempString.find(" "));
+		TempLines = stoi(TempString.substr(TempString.find(" "), TempString.length()));
+		programmers[i].lines = TempLines;
+		programmers[i].name = TempName;
+		programmers[i].programmer_id = TempId;
 	}
-	return 0;
+	return i;
 }
 
 //returns the total of the lines field for all programmers
@@ -33,7 +41,7 @@ int calcTotalLines( Programmer programmers[], int numProgrammers )
 	int Total = 0;
 	//just a stub!
 		for (int i = 0; i < numProgrammers; i++) {
-			Total += programmers.lines[i];
+			Total += programmers[i].lines;
 	}
 	return Total;
 }
@@ -41,13 +49,8 @@ int calcTotalLines( Programmer programmers[], int numProgrammers )
 //returns the average lines coded for all programmers as a float
 float calcAverageLines( Programmer programmers[], int numProgrammers )
 {
-	//helper variables
-	int Total = 0;
+	int Total = calcTotalLines(programmers, numProgrammers);
 	float Average = 0.0f;
-	//just a stub!
-	for (int i = 0; i < numProgrammers; i++) {
-		Total += programmers.lines[i];
-	}
 	Average = Total / numProgrammers;
 	return Average;
 }
@@ -55,8 +58,7 @@ float calcAverageLines( Programmer programmers[], int numProgrammers )
 //return a string containing info for a particular programmer
 string generateProgrammerInfo( Programmer theProgrammer )
 {
-	//just a stub!
-	return "";
+	return to_string(theProgrammer.programmer_id) + " " + theProgrammer.name + " " + to_string(theProgrammer.lines);
 }
 
 //generate report for all programmers
@@ -70,10 +72,9 @@ void generateProgrammerReport( ostream& output, Programmer programmers[], int nu
 	Total = calcTotalLines(programmers,numProgrammers);
 	Average = calcAverageLines(programmers, numProgrammers);	
 	output << "These are all the programmers:";
-	generateProgrammerInfo;
 	for( int i = 0; i < numProgrammers; i++ )
 	{
-		output << "\nProgrammer info"; //this should output the programmer info for each programmer
+		output << endl << generateProgrammerInfo(programmers[i]); //this should output the programmer info for each programmer
 	}
    
 	output << "\nTotal lines = " << Total; //this should ouptut the total lines
