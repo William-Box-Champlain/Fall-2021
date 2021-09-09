@@ -48,7 +48,7 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 	{
 		//Loop to traverse rows
 		for(int CurrentRow = 0; CurrentRow < Rows; CurrentRow++)
-		{		//Store line in TempString, then break line up and cast into ints
+		{		//Store line in TempString, then break line up and cast into ints to be temporarely held in TempOne and TempTwo
 				getline(input,TempString);
 				TempOne = stoi(TempString.substr(0,TempString.find(" ")));
 				TempTwo = stoi(TempString.substr(TempString.find(" "),TempString.length()));
@@ -66,6 +66,6 @@ string formatReportLine( int languageRank, int infoArray[][INFO], string names[]
    	// modify to build each output line for each language, and align the output so its organized
    	// hint: to return a string that concatenates strings and ints, use a stringstream
 	stringstream ss;
-	ss << infoArray[languageRank][0] << infoArray[languageRank][1];
-   	return names[languageRank] + ss.str();
+	ss << setw(17) << left << names[languageRank] << setw(10) << left << infoArray[languageRank][0] << infoArray[languageRank][1];
+   	return ss.str();
 }
