@@ -1,1 +1,3 @@
 C:\Users\willb\Documents\GitHub\CIS-240\Advanced_Book_Class\Debug\Advanced_Book_Class.exe
+C:\Users\william.box\Documents\Github\CIS-240\Advanced_Book_Class\Debug\Advanced_Book_Class.exe
+C:\Users\william.box\Documents\Github\CIS-240\Advanced_Book_Class\Debug\Advanced_Book_Class.pdb

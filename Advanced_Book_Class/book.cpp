@@ -28,6 +28,7 @@ using namespace std;
 		bType = UNKNOWN;
 		bPages = 0;
 		bOunces = 0;
+		bReviews = "";
 	}
 	//constructor
 	Book::Book(const string& name, Type type, int pages, float ounces, string& reviews) 

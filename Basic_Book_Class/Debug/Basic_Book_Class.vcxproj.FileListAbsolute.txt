@@ -1,1 +1,3 @@
 C:\Users\willb\Documents\GitHub\CIS-240\Basic_Book_Class\Debug\Basic_Book_Class.exe
+C:\Users\william.box\Documents\Github\CIS-240\Basic_Book_Class\Debug\Basic_Book_Class.exe
+C:\Users\william.box\Documents\Github\CIS-240\Basic_Book_Class\Debug\Basic_Book_Class.pdb
