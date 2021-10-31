@@ -35,7 +35,7 @@ public:
 	Clock addClocks(const Clock& aClock) const {
 		Clock nClock(0, 0);
 		nClock = addMinutes(aClock.minute);
-		nClock = addHour(aClock.hour);
+		nClock = nClock.addHour(aClock.hour);
 		return nClock;
 	}
 	//operator+ to concatenate another Clock, and return the new clock, does not change the calling object (clock)
@@ -103,12 +103,14 @@ private:
 int main()
 {
 	Clock clockA(4,45);
-	cout << clockA << endl;
-	clockA = clockA + 45;
-	cout << clockA << endl;
+	cout << "clockA: " << clockA << endl;
+	clockA = clockA - 30;
+	cout << "clockA - 30: " << clockA << endl;
 	Clock clockB(1,30);
-	cout << clockB << endl;
+	cout << "clockB: " << clockB << endl;
+	clockB = clockB + 15;
+	cout << "clockB + 15: " << clockB << endl;
 	Clock clockC = clockA + clockB;
-	cout << clockC << endl;
+	cout << "clockC = clockA + clockB: " << clockC << endl;
 	return 0;
 }
