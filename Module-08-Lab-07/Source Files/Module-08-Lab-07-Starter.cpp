@@ -47,7 +47,7 @@ class Faculty :
 public:
     Faculty() {
         std::cout << "Faculty Object created using default Faculty constructor" << endl;
-        pName = "";
+        Person();
         fDepartment = "";
     }
     Faculty(std::string name, Discipline i) {
@@ -72,7 +72,7 @@ class Student :
 public:
     Student() {
         std::cout << "Student Object created using default Student constructor" << endl;
-        pName = "";
+        Person();
         sMajor = "";
     }
     Student(std::string name, Discipline i) {
